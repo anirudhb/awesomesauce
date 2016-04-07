@@ -1,0 +1,30 @@
+{
+  "name": "awesomesauce",
+  "version": "1.0.0",
+  "description": "An OS on top of your current OS",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anirudhb/awesomesauce.git"
+  },
+  "keywords": [
+    "awesome",
+    "os"
+  ],
+  "author": "Anirudh Balaji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anirudhb/awesomesauce/issues"
+  },
+  "homepage": "https://github.com/anirudhb/awesomesauce#readme",
+  "devDependencies": {
+    "electron-packager": "^6.0.0",
+    "electron-prebuilt": "^0.37.4"
+  },
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}
