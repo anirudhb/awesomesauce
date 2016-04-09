@@ -4,7 +4,7 @@
 
 .drop {
 	height: 300px;
-	transition: transform 800ms ease;
+	transition: transform 800ms ease, height 800ms ease;
 	position: relative;
 	z-index: -1;
 }
@@ -13,8 +13,13 @@
 	transform: scale(0.25);
 }
 
+.half {
+	height: 150px;
+}
+
 .beaker {
 	height: 400px;
+	transition: transform 800ms ease, height 800ms ease;
 }
 
 .liquid {
@@ -30,4 +35,8 @@
 
 .top {
 	z-index: 2 !important;
+}
+
+.cursive {
+	font-family: "Pacifico";
 }

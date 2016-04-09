@@ -24,7 +24,7 @@ app.on("ready", function() {
 		icon: "awesomesauce_icon.png"
 	});
 	
-	mainWindow.loadURL("file://" + __dirname + "/index.html");
+	mainWindow.loadURL("file://" + __dirname + "/html/animation.html");
 	
 	mainWindow.maximize();
 	
