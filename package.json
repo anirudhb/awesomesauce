@@ -25,6 +25,7 @@
     "electron-prebuilt": "^0.37.4"
   },
   "dependencies": {
-    "jquery": "^2.2.3"
+    "jquery": "^2.2.3",
+    "jsonfile": "^2.2.3"
   }
 }

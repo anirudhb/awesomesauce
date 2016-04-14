@@ -1,64 +1,67 @@
 // jQuery
 $ = require("jquery");
 
+// IPC (Inter-Process Communication)
+ipc = require("electron").ipcRenderer;
+
 // Pre-page load stuff
-$(function() {
-	$(".beaker").hide();
-	$(".title").hide();
-	$(".login").hide();
+$(() => {
+    $(".beaker").hide();
+    $(".title").hide();
+    $(".login").hide();
 });
 
 // body ready
-$(window).load(function() {
-	setTimeout(function() {
-		$(".drop").addClass("quarter");
-		setTimeout(function() {
-			$(".beaker").fadeIn(800);
-			setTimeout(function() {
-				$(".drop").css({
-					transform: "scale(0.25) translateY(2000px)"
-				});
-				setTimeout(function() {
-					$(".liquid").addClass("fillred");
-					$(".title").fadeIn(800);
-					setTimeout(function() {
-						$(".drop").css({
-							transform: "scale(0.25)"
-						});
-						setTimeout(function() {
-							$(".beaker").css({
-								height: 0
-							});
-							setTimeout(function() {
-								$(".drop").attr("style", null);
-								$(".drop").removeClass("quarter");		
-								setTimeout(function() {
-									$(".beaker").hide();
-									$(".title").fadeOut(800);
-									setTimeout(function() {
-										$(".login").fadeIn(800);
-										setTimeout(function() {
-											$(".drop").addClass("half");
-										}, 800);
-									}, 800);
-								}, 800);
-							}, 800);
-						}, 800);
-						setTimeout(function() {
-							$(".drop").addClass("top");
-						}, 200);
-						setTimeout(function() {
-							$(".drop").removeClass("top");
-						}, 400);
-					}, 800);
-				}, 800);
-				setTimeout(function() {
-					$(".drop").addClass("top");
-				}, 100);
-				setTimeout(function() {
-					$(".drop").removeClass("top");
-				}, 300);
-			}, 800);
-		}, 800);
-	}, 600);
+$(window).load(() => {
+    setTimeout(() => {
+        $(".drop").addClass("quarter");
+        setTimeout(() => {
+            $(".beaker").fadeIn(800);
+            setTimeout(() => {
+                $(".drop").css({
+                    transform: "scale(0.25) translateY(2000px)"
+                });
+                setTimeout(() => {
+                    $(".liquid").addClass("fillred");
+                    setTimeout(() => {
+                        $(".title").fadeIn(800);
+                        setTimeout(() => {
+                            $(".drop").css({
+                                transform: "scale(0.25)"
+                            });
+                            setTimeout(() => {
+                                $(".beaker").css({
+                                    height: 0
+                                });
+                                setTimeout(() => {
+                                    $(".drop").attr("style", null);
+                                    $(".drop").removeClass("quarter");
+                                    setTimeout(() => {
+                                        $(".beaker").hide();
+                                        $(".title").fadeOut(800);
+                                        $(".drop").fadeOut(800);
+                                        setTimeout(() => {
+                                          ipc.send("goToLogin");
+                                        }, 800);
+                                    }, 800);
+                                }, 800);
+                            }, 800);
+                            setTimeout(() => {
+                                $(".drop").addClass("top");
+                            }, 200);
+                            setTimeout(() => {
+                                $(".drop").removeClass("top");
+                            }, 400);
+                        }, 800);
+                    }, 800);
+                }, 800);
+                setTimeout(() => {
+                    $(".drop").addClass("top");
+                }, 100);
+                setTimeout(() => {
+                    $(".drop").removeClass("top");
+                }, 300);
+            }, 800);
+        }, 800);
+    }, 600);
 });
